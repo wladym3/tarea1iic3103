@@ -16,7 +16,7 @@ def show
 
     while i<response_films["characters"].length do
       c= Hash.new( "personajes" )
-      uri = "http://localhost:3000/" + response_films["characters"][i].slice(21,response_films["characters"][i].length)
+      uri = "https://tarea1iic3103.herokuapp.com/" + response_films["characters"][i].slice(21,response_films["characters"][i].length)
        c= {"name" => HTTParty.get(response_films["characters"][i])["name"] ,"uri"=> uri}
       @characters[i]=c
       i=i+1
@@ -25,7 +25,7 @@ def show
       i=0
    while i<response_films["planets"].length do
      c= Hash.new( "planetas" )
-     uri = "http://localhost:3000/" + response_films["planets"][i].slice(21,response_films["planets"][i].length)
+     uri = "https://tarea1iic3103.herokuapp.com/" + response_films["planets"][i].slice(21,response_films["planets"][i].length)
       c= {"name" =>  HTTParty.get(response_films["planets"][i])["name"] ,"uri"=> uri}
 
      @planets[i]= c
@@ -36,7 +36,7 @@ def show
      i=0
   while i<response_films["starships"].length do
     c= Hash.new( "naves" )
-    uri = "http://localhost:3000/" + response_films["starships"][i].slice(21,response_films["starships"][i].length)
+    uri = "https://tarea1iic3103.herokuapp.com/" + response_films["starships"][i].slice(21,response_films["starships"][i].length)
      c= {"name" =>  HTTParty.get(response_films["starships"][i])["name"] ,"uri"=> uri}
 
     @starships[i]=  c

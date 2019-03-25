@@ -21,7 +21,7 @@ class PeopleController < ApplicationController
       @species  = HTTParty.get(response_people["species"][0])["name"]
 
         @homeworld= Hash.new( "homeworld" )
-        uri = "http://localhost:3000/" + response_people["homeworld"].slice(21,response_people["homeworld"].length)
+        uri = "https://tarea1iic3103.herokuapp.com/" + response_people["homeworld"].slice(21,response_people["homeworld"].length)
        @homeworld= {"name" =>  HTTParty.get(response_people["homeworld"])["name"] ,"uri"=> uri}
 
 
@@ -32,7 +32,7 @@ class PeopleController < ApplicationController
        i=0
       while i<response_people["films"].length do
         c= Hash.new( "peliculas" )
-        uri = "http://localhost:3000/" + response_people["films"][i].slice(21,response_people["films"][i].length)
+        uri = "https://tarea1iic3103.herokuapp.com/" + response_people["films"][i].slice(21,response_people["films"][i].length)
          c= {"title" =>  HTTParty.get(response_people["films"][i])["title"] ,"uri"=> uri}
         @films[i]= c
             i=i+1
@@ -49,7 +49,7 @@ class PeopleController < ApplicationController
        i=0
     while i<response_people["starships"].length do
       c= Hash.new( "starships" )
-      uri = "http://localhost:3000/" + response_people["starships"][i].slice(21,response_people["starships"][i].length)
+      uri = "https://tarea1iic3103.herokuapp.com/" + response_people["starships"][i].slice(21,response_people["starships"][i].length)
        c= {"name" =>  HTTParty.get(response_people["starships"][i])["name"] ,"uri"=> uri}
       @starships[i]= c
       i=i+1

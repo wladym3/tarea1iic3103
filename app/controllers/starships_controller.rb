@@ -14,7 +14,7 @@ class StarshipsController < ApplicationController
       i=0
      while i<response_starships["films"].length do
        c= Hash.new( "peliculas" )
-       uri = "http://localhost:3000/" + response_starships["films"][i].slice(21,response_starships["films"][i].length)
+       uri = "https://tarea1iic3103.herokuapp.com/" + response_starships["films"][i].slice(21,response_starships["films"][i].length)
         c= {"title" =>  HTTParty.get(response_starships["films"][i])["title"] ,"uri"=> uri}
        @films[i]= c
            i=i+1
@@ -25,7 +25,7 @@ class StarshipsController < ApplicationController
        i=0
     while i<response_starships["pilots"].length do
       c= Hash.new( "pilots" )
-      uri = "http://localhost:3000/" + response_starships["pilots"][i].slice(21,response_starships["pilots"][i].length)
+      uri = "https://tarea1iic3103.herokuapp.com/" + response_starships["pilots"][i].slice(21,response_starships["pilots"][i].length)
        c= {"name" =>  HTTParty.get(response_starships["pilots"][i])["name"] ,"uri"=> uri}
       @pilots[i]= c
       i=i+1

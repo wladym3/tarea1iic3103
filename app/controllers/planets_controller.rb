@@ -22,7 +22,7 @@ class PlanetsController < ApplicationController
       i=0
      while i<response_planets["films"].length do
        c= Hash.new( "peliculas" )
-       uri = "http://localhost:3000/" + response_planets["films"][i].slice(21,response_planets["films"][i].length)
+       uri = "https://tarea1iic3103.herokuapp.com/" + response_planets["films"][i].slice(21,response_planets["films"][i].length)
         c= {"title" =>  HTTParty.get(response_planets["films"][i])["title"] ,"uri"=> uri}
        @films[i]= c
            i=i+1
@@ -32,7 +32,7 @@ class PlanetsController < ApplicationController
         i=0
      while i<response_planets["residents"].length do
        c= Hash.new( "residents" )
-       uri = "http://localhost:3000/" + response_planets["residents"][i].slice(21,response_planets["residents"][i].length)
+       uri = "https://tarea1iic3103.herokuapp.com/" + response_planets["residents"][i].slice(21,response_planets["residents"][i].length)
         c= {"name" =>  HTTParty.get(response_planets["residents"][i])["name"] ,"uri"=> uri}
        @residents[i]= c
        i=i+1
