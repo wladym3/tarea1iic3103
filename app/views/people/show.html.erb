@@ -1,0 +1,46 @@
+<h1><%= @people["name"] %></h1>
+
+<table>
+  <tr>
+    <th>Altura</th>
+    <th>Peso</th>
+    <th>Cabello</th>
+    <th>Piel</th>
+    <th>Ojos</th>
+    <th>Nacimiento</th>
+    <th>Genero</th>
+    <th>Planeta Natal</th>
+      <th>Especie</th>
+        <th>Vehiculos</th>
+          <th>Naves</th>
+            <th>Peliculas</th>
+  </tr>
+
+  <tr>
+    <td><%= @people["height"]%> cm</td>
+    <td><%= @people["mass"]%> Kg</td>
+    <td><%= @people["hair_color"] %></td>
+    <td><%= @people["skin_color"] %></td>
+    <td><%= @people["eye_color"] %></td>
+    <td><%= @people["birth_year"] %></td>
+    <td><%= @people["gender"] %></td>
+    <td>    <a  href=<%="#{@homeworld["uri"] }"%>  >  <%= @homeworld["name"] %></a> </td>
+    <td><%= @species %></td>
+  <td>
+    <%if (@vehicles[0]!=nil)%>
+  <%i=1%><%=@vehicles[0]%><%while i<@vehicles.length do%><%=", "+@vehicles[i]%><%i=i+1%>d<%end%>
+  <%end %>
+ </td>
+  <td>
+    <%if (@starships[0]!=nil)%>
+    <%i=1%><a  href=<%="#{@starships[0]["uri"] }"%>  >  <%= @starships[0]["name"] %></a><%while i<@starships.length do%><%=", "%><a  href=<%="#{@starships[i]["uri"] }"%>>  <%= @starships[i]["name"] %></a><%i=i+1%><%end%>
+<%end %>
+  </td>
+  <td>
+    <%if (@films[0]!=nil)%>
+    <%i=1%><a  href=<%="#{@films[0]["uri"] }"%>  >  <%= @films[0]["title"] %></a><%while i<@films.length do%><%=", "%><a  href=<%="#{@films[i]["uri"] }"%>>  <%= @films[i]["title"] %></a><%i=i+1%><%end%>
+    <%end %>
+  </td>
+
+    </tr>
+</table>

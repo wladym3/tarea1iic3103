@@ -1,0 +1,38 @@
+<h1><%= @pelicula["title"] %></h1>
+
+<table>
+  <tr>
+    <th>Episodio</th>
+    <th>Año</th>
+    <th>Director</th>
+    <th>Productores</th>
+    <th>Opening Crawl</th>
+    <th>Personajes</th>
+    <th>Planetas</th>
+    <th>Starships</th>
+  </tr>
+
+  <tr>
+    <td><%= @pelicula["episode_id"] %></td>
+    <td><%= @pelicula["release_date"][0..3] %></td>
+    <td><%= @pelicula["director"] %></td>
+    <td><%= @pelicula["producer"] %></td>
+    <td><%= @pelicula["opening_crawl"] %></td>
+  <td>
+      <%if (@characters[0]!=nil)%>
+  <%i=1%><a  href=<%="#{@characters[0]["uri"] }"%>  >  <%= @characters[0]["name"] %></a><%while i<@characters.length do%><%=", "%><a  href=<%="#{@characters[i]["uri"] }"%>>  <%= @characters[i]["name"] %></a><%i=i+1%><%end%>
+<%end%>
+ </td>
+  <td>
+      <%if (@planets[0]!=nil)%>
+    <%i=1%><a  href=<%="#{@planets[0]["uri"] }"%>  >  <%= @planets[0]["name"] %></a><%while i<@planets.length do%><%=", "%><a  href=<%="#{@planets[i]["uri"] }"%>>  <%= @planets[i]["name"] %></a><%i=i+1%><%end%>
+<%end%>
+  </td>
+  <td>
+      <%if (@starships[0]!=nil)%>
+    <%i=1%><a  href=<%="#{@starships[0]["uri"] }"%>  >  <%= @starships[0]["name"] %></a><%while i<@starships.length do%><%=", "%><a  href=<%="#{@starships[i]["uri"] }"%>>  <%= @starships[i]["name"] %></a><%i=i+1%><%end%>
+<%end%>
+  </td>
+
+    </tr>
+</table>

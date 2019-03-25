@@ -1,0 +1,27 @@
+<h1>Peliculas</h1>
+
+<table>
+  <tr>
+    <th>Episodio</th>
+    <th>Titlulo</th>
+    <th>Año</th>
+    <th>Director</th>
+    <th>Productores</th>
+  </tr>
+<%  i=0%>
+
+
+<% while i<@count do %>
+  <tr>
+    <td><%= @StarW[i]["episode_id"] %></td>
+    <td>   <a
+    href=<%="http://localhost:3000/films/#{(i+1).to_s }"%>
+        >  <%= @StarW[i]["title"] %></a></td>
+    <td><%= @StarW[i]["release_date"][0..3] %></td>
+    <td><%= @StarW[i]["director"] %></td>
+    <td><%= @StarW[i]["producer"] %></td>
+
+  <%  i=i+1%>
+  </tr>
+<% end %>
+</table>

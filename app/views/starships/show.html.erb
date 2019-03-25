@@ -1,0 +1,49 @@
+<h1><%= @starships["name"] %></h1>
+
+<table>
+  <tr>
+
+
+
+    <th>Modelo</th>
+    <th>Fabricante</th>
+    <th>Largo</th>
+    <th>Velocidad atmosferica maxima</th>
+    <th>Personal</th>
+    <th>Pasajeros</th>
+    <th>Capacidad de carga</th>
+    <th>Suministros</th>
+    <th>Calificación de hiperpropulsión</th>
+    <th>MGLT</th>
+        <th>Clase</th>
+    <th>Pilotos</th>
+    <th>Peliculas</th>
+  </tr>
+
+  <tr>
+    <td><%= @starships["model"]%></td>
+    <td><%= @starships["manufacturer"]%></td>
+    <td><%= @starships["length"] %></td>
+    <td><%= @starships["max_atmosphering_speed"] %></td>
+    <td><%= @starships["crew"] %></td>
+    <td><%= @starships["passengers"] %></td>
+    <td><%= @starships["cargo_capacity"] %></td>
+    <td><%= @starships["consumables"] %></td>
+    <td><%= @starships["hyperdrive_rating"] %></td>
+    <td><%= @starships["MGLT"] %></td>
+    <td><%= @starships["starship_class"] %></td>
+
+
+    <td>
+      <%if (@pilots[0]!=nil)%>
+      <%i=1%><a  href=<%="#{@pilots[0]["uri"] }"%>  >  <%= @pilots[0]["name"] %></a><%while i<@pilots.length do%><%=", "%><a  href=<%="#{@pilots[i]["uri"] }"%>>  <%= @pilots[i]["name"] %></a><%i=i+1%><%end%>
+<%end %>
+    </td>
+  <td>
+    <%if (@films[0]!=nil)%>
+    <%i=1%><a  href=<%="#{@films[0]["uri"] }"%>  >  <%= @films[0]["title"] %></a><%while i<@films.length do%><%=", "%><a  href=<%="#{@films[i]["uri"] }"%>>  <%= @films[i]["title"] %></a><%i=i+1%><%end%>
+    <%end %>
+  </td>
+
+    </tr>
+</table>

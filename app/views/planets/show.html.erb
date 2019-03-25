@@ -1,0 +1,38 @@
+<h1><%= @planets["name"] %></h1>
+
+<table>
+  <tr>
+    <th>Periodo de rotación</th>
+    <th>Periodo orbital</th>
+    <th>Diametro</th>
+    <th>Clima</th>
+    <th>Gravedad</th>
+    <th>Terreno</th>
+    <th>Superficie acuosa</th>
+    <th>Población</th>
+    <th>Residentes</th>
+    <th>Peliculas</th>
+  </tr>
+
+  <tr>
+    <td><%= @planets["rotation_period"]%></td>
+    <td><%= @planets["orbital_period"]%></td>
+    <td><%= @planets["diameter"] %></td>
+    <td><%= @planets["climate"] %></td>
+    <td><%= @planets["gravity"] %></td>
+    <td><%= @planets["terrain"] %></td>
+    <td><%= @planets["surface_water"] %></td>
+    <td><%= @planets["population"] %></td>
+    <td>
+      <%if (@residents[0]!=nil)%>
+      <%i=1%><a  href=<%="#{@residents[0]["uri"] }"%>  >  <%= @residents[0]["name"] %></a><%while i<@residents.length do%><%=", "%><a  href=<%="#{@residents[i]["uri"] }"%>>  <%= @residents[i]["name"] %></a><%i=i+1%><%end%>
+<%end %>
+    </td>
+  <td>
+    <%if (@films[0]!=nil)%>
+    <%i=1%><a  href=<%="#{@films[0]["uri"] }"%>  >  <%= @films[0]["title"] %></a><%while i<@films.length do%><%=", "%><a  href=<%="#{@films[i]["uri"] }"%>>  <%= @films[i]["title"] %></a><%i=i+1%><%end%>
+<%end %>
+  </td>
+
+    </tr>
+</table>
